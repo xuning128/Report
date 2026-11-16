@@ -1,0 +1,142 @@
+{
+  "_說明": "本機 wiki 頁名 → Notion 頁面 ID。Notion 採「每篇論文一套子頁面」：同一概念出現在多篇論文時，每篇底下各有一頁。",
+  "root": "41a4d41be63e81e4825ef0ac96c3d7f5",
+  "papers_data_source": "collection://41a4d41b-e63e-8120-8771-000beb8bcffa",
+  "cross_paper_synthesis": "41a4d41be63e816ab0a2fb3fb08b988f",
+  "papers": {
+    "omar2025multi": {
+      "omar2025multi": "41a4d41be63e818f84ffd0445c4b1d64",
+      "large-language-model": "41a4d41be63e81a1ba89eeb8949972ef",
+      "llm-hallucination": "41a4d41be63e8185828ecdc1ff4107fc",
+      "adversarial-attack": "41a4d41be63e81dfa58ad81482993247",
+      "clinical-decision-support": "41a4d41be63e8119be84f8ba4466e0f1",
+      "sycophancy": "41a4d41be63e81439431c53dfc24dde3",
+      "retrieval-augmented-generation": "41a4d41be63e81b99a81c70f006276e4",
+      "mitigation-prompt": "41a4d41be63e81478364ddaa3119ac2d",
+      "temperature": "41a4d41be63e813c824dfbb7e17e9f84",
+      "simulated-clinical-vignettes": "41a4d41be63e817e900aeb3f3985f8b8",
+      "llm-as-judge": "41a4d41be63e81df95c1cf335d268a82",
+      "mixed-effects-logistic-regression": "41a4d41be63e8158b8a8f7e9043a1a56",
+      "odds-ratio": "41a4d41be63e81c7a214cf6a095c1092",
+      "kw-llm-hallucination": "41a4d41be63e810fbebbf9ca09e0f586",
+      "kw-adversarial-attack": "41a4d41be63e811b99e2e40ce4ab0763",
+      "kw-clinical-decision-support": "41a4d41be63e81cb9340d73ec90a5ce8",
+      "kw-prompt-engineering": "41a4d41be63e81998966d93a3b5f00bc",
+      "research-gaps": "41a4d41be63e81fa87eefab33a63d4fa",
+      "glossary": "41a4d41be63e81f0aa99d977fea5aaa1",
+      "_sections": {
+        "concepts": "41a4d41be63e81d78303f21e41c4cbee",
+        "methods": "41a4d41be63e819bb56ec0e0c4f9f757",
+        "keywords": "41a4d41be63e810c9ed6dc714f6cb3e9",
+        "synthesis": "41a4d41be63e8137af86eda23fb2c520",
+        "glossary": "41a4d41be63e81f0aa99d977fea5aaa1"
+      }
+    },
+    "ada2026prevention": {
+      "ada2026prevention": "41a4d41be63e818d979ee629f694348c",
+      "prediabetes": "41a4d41be63e81cf8c34f0a96cd1af8b",
+      "t2d-risk-factors": "41a4d41be63e8183bf30c2928ff4b608",
+      "diabetes-prevention-program": "41a4d41be63e81708c64f5fd7ae79771",
+      "type-1-diabetes-stages": "41a4d41be63e815a97c7f4e5cd242fa0",
+      "metformin": "41a4d41be63e81a289d3ea5ebb644cab",
+      "glycemic-tests": "41a4d41be63e811f9815dae7c35595e2",
+      "hazard-ratio": "41a4d41be63e819795a2e33b7cffdf6f",
+      "person-years": "41a4d41be63e81feae5ef0115fa8d98c",
+      "evidence-grading": "41a4d41be63e81e2adf6ecd23e1e59e8",
+      "odds-ratio": "41a4d41be63e8164aafdff97a92c004f",
+      "kw-prediabetes": "41a4d41be63e81f38f02f4ce2b298806",
+      "kw-diabetes-prevention": "41a4d41be63e81b19e59e7f393234c84",
+      "kw-diabetes-risk-factors": "41a4d41be63e81d69e45f70e3616b173",
+      "_sections": {
+        "concepts": "41a4d41be63e81d2bc39f8dfe33a7bdc",
+        "methods": "41a4d41be63e81849a2af72b8c33530d",
+        "keywords": "41a4d41be63e812984e9c9c1b1fb1772",
+        "synthesis": "41a4d41be63e817fa0fdfd0614a9cb6e",
+        "glossary": "41a4d41be63e811cac52c8fec7b2731b"
+      }
+    },
+    "lin2022point": {
+      "lin2022point": "41a4d41be63e81cabb96f9580daa839f",
+      "dyskalemia": "41a4d41be63e81cba28aef783cd959fa",
+      "electrocardiogram": "41a4d41be63e81718a8bd4dfe31a204b",
+      "ai-enabled-ecg": "41a4d41be63e81508739e995d5e1549f",
+      "deep-learning": "41a4d41be63e81eb91b8cccc89195f72",
+      "clinical-decision-support": "41a4d41be63e815bb46ef263c2962b90",
+      "external-validation": "41a4d41be63e81e9a062d77a402616e3",
+      "black-box-pragmatic-study": "41a4d41be63e81969e38f04956a439be",
+      "roc-auc": "41a4d41be63e81209529f09092046221",
+      "sensitivity-specificity-ppv-npv": "41a4d41be63e8179b7a3d2360008a0f3",
+      "c-index": "41a4d41be63e818798a2d5a0ba53f278",
+      "cox-regression": "41a4d41be63e81b0841be93d264bcc2a",
+      "mean-absolute-error": "41a4d41be63e81b18e4bf46c81c34a6c",
+      "multiple-imputation": "41a4d41be63e814dbeadd87027ac442f",
+      "hazard-ratio": "41a4d41be63e8114bc4cd6961a679135",
+      "odds-ratio": "41a4d41be63e815a928ac86f6a902fa9",
+      "tsgh-ed-ecg-cohort": "41a4d41be63e81fb87e5e6236de1523e",
+      "kw-ai-ecg": "41a4d41be63e815985affb22f3196270",
+      "kw-dyskalemia": "41a4d41be63e81418b32f50d75b5a61e",
+      "kw-deep-learning-prediction": "41a4d41be63e816ca2dec87315ae5ea3",
+      "kw-clinical-decision-support": "41a4d41be63e81918c7dd9351b812abe",
+      "_sections": {
+        "concepts": "41a4d41be63e81559953e72305c1ee19",
+        "methods": "41a4d41be63e81d49e5be08c2ce6c210",
+        "keywords": "41a4d41be63e81ee941cf61a926e3fb8",
+        "synthesis": "41a4d41be63e81b89bf4f1a4b4dc892e",
+        "glossary": "41a4d41be63e8113abb3ee0c4dc13ea4"
+      }
+    },
+    "kausch2024apnea": {
+      "kausch2024apnea": "41a4d41be63e8192901cc9f532ed691e",
+      "late-onset-sepsis": "41a4d41be63e81069afbe38c45ec041a",
+      "preterm-infant": "41a4d41be63e81e99385d9b4161bfd7b",
+      "cardiorespiratory-events": "41a4d41be63e81218307e5237465b098",
+      "continuous-physiological-monitoring": "41a4d41be63e81318443fafc0c4cb3a4",
+      "time-series-outcome-labeling": "41a4d41be63e817eb1baef318c11bd93",
+      "static-vs-dynamic-risk-markers": "41a4d41be63e8176872cc74194f6d7f0",
+      "cross-validation": "41a4d41be63e81659238e1d6cabb0804",
+      "calibration": "41a4d41be63e81999354e537992dde6a",
+      "pseudo-r-squared": "41a4d41be63e81569d8fc4d48dccd0de",
+      "clustered-standard-errors": "41a4d41be63e8182a05eeb0f65c2679b",
+      "tripod-reporting": "41a4d41be63e81d8b34fc1a3ebf30aef",
+      "roc-auc": "41a4d41be63e814498c0e6a0459c78e8",
+      "pre-vent-cohort": "41a4d41be63e81708155f172c83a19be",
+      "kw-neonatal-sepsis": "41a4d41be63e815f87faf2575712f47f",
+      "kw-preterm-infant": "41a4d41be63e81b49a37f3512be19447",
+      "kw-physiological-monitoring-prediction": "41a4d41be63e8180a664f2742f29b3ab",
+      "_sections": {
+        "concepts": "41a4d41be63e8166b3d8d9c586e1489b",
+        "methods": "41a4d41be63e81e69b55dc1589403937",
+        "keywords": "41a4d41be63e815bb57efd6b857c3092",
+        "synthesis": "41a4d41be63e81d48eb9ec0a2ec88873",
+        "glossary": "41a4d41be63e81aba6d6d58a13eaf2c3"
+      }
+    },
+    "lubitz2022detection": {
+      "lubitz2022detection": "41a4d41be63e81a58ce4ca86ed47bcdd",
+      "atrial-fibrillation": "41a4d41be63e81649752c2f2c5bcb56e",
+      "photoplethysmography": "41a4d41be63e8124b214ecbc03e83400",
+      "wearable-devices": "41a4d41be63e81b39877d594ce2cd655",
+      "cha2ds2-vasc": "41a4d41be63e8103a92cdf678b0354cf",
+      "sliding-window": "41a4d41be63e81c19021fe61bba65542",
+      "ppg-af-modeling-pipeline": "41a4d41be63e81dba9d0eece58456107",
+      "sensitivity-specificity-ppv-npv": "41a4d41be63e8163870beb317a66f10e",
+      "fitbit-heart-study": "41a4d41be63e813682c3ebec7567381a",
+      "kw-atrial-fibrillation": "41a4d41be63e81beb57dd1f46c855ae2",
+      "kw-wearable-devices": "41a4d41be63e817abe92e6a0d701de43",
+      "kw-ppg": "41a4d41be63e81a2a75ffcc1595a5204",
+      "_sections": {
+        "concepts": "41a4d41be63e81969d49d54f2ecb25e4",
+        "methods": "41a4d41be63e8136aface753ce3daa81",
+        "keywords": "41a4d41be63e8132811ee91386bd5800",
+        "synthesis": "41a4d41be63e81c6873ce1ab8cc9a796",
+        "glossary": "41a4d41be63e814da1bcc8b975613fa9"
+      }
+    }
+  },
+  "shared": {
+    "overview": "41a4d41be63e81bca320e5629481879a",
+    "contradictions": "41a4d41be63e817a89d9c3c8d6a7567c",
+    "research-questions": "41a4d41be63e81e8bccac0e3d0d59445",
+    "log": "41a4d41be63e8197b195cf9905058f7e"
+  }
+}
