@@ -77,3 +77,30 @@
 
 ## [2026-11-16] schema | 7.9 補充紀錄位置
 階段 1 也記查詢紀錄（寫在 01-outline.md）；checks.md 固定格式；階段 3 截圖存 shots/slide-NN.png。
+
+## [2026-11-16] schema | 7.9 新增 3b 圖文講義支線
+階段 2 後分兩條支線：3a 投影片（deck.html）、3b A4 圖文講義（handout.html），每份簡報預設附講義。02 新增「圖表規格」；新增「自製圖表規則」（自行繪圖、標出處、不照搬原圖、ADA 只引數字、不放照片）。
+
+## [2026-11-16] schema | 7.9 圖片只讀本機
+「自製圖表規則」改為「圖片來源規則」：圖片只用 doc/assets/ 的本機檔或 Claude 自製 SVG；不從網路／Notion 取圖；02 圖表規格加「圖片來源」欄；2、3a、3b 檢查加路徑存在與無外部圖片網址。
+
+## [2026-11-16] schema | 7.9 關卡只留大綱
+使用者指定：只有階段 1 大綱停下來確認；階段 2、3a、3b 自動檢查通過就直接做完，遇到問題才問。
+
+## [2026-11-16] write | decks/health-data-x-ai 階段 1 大綱
+產出 01-outline.md（對照表＋15 張大綱）。缺口：NLP 只有 Omar、rule-out 無專門研究，待使用者決定。
+
+## [2026-11-16] write | decks/health-data-x-ai 大綱第 2 版
+使用者決定：刪除 rule-out；NLP 缺口標在第 13 張；新增 Limitations and Future Work、Critical Thinking、Take-home；另補「預測特徵怎麼選」「自己跑模型需要的技術」。共 16 張，待確認。02-content.md 草稿已先寫。
+
+## [2026-11-16] write | decks/health-data-x-ai 大綱第 3 版
+使用者決定刪除 ADA（臨床指引，非原始研究）；簡報改為 4 篇。01、02 草稿、00-brief 同步更新。待確認。
+
+## [2026-11-16] write | decks/health-data-x-ai 大綱第 4 版
+使用者改變決定，ADA 放回簡報（第 3–5 張當背景）。01、02 草稿、00-brief 回到 5 篇版本。待確認。
+
+## [2026-11-16] write | decks/health-data-x-ai 完成
+大綱第 4 版確認後一次做完：02-content.md 定稿；投影片 16 張存於 Report/health-data-x-ai.html（使用者指定位置）；A4 講義 7 頁存於 decks/health-data-x-ai/handout.html；截圖存 shots/。自動檢查 3a、3b 各重做 1 次後通過，詳見 checks.md。CLAUDE.md 7.9 註明投影片放 Report/ 根目錄。
+
+## [2026-11-16] write | decks/health-data-x-ai 互動式簡報
+使用者要求互動式：加入逐步顯示、可操作的圖（時間軸點選、點圖與長條滑過）、點開看細節、第 15 張小測驗；共 17 張。講義新增自我檢測。刪除封面與講義開頭的文獻清單行。01、02、checks.md 同步更新。

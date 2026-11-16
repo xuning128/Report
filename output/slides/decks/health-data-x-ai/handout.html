@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>健康數據 × AI｜講義</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--wine:#780000;--red:#c1121f;--cream:#fdf0d5;--navy:#003049;--sky:#669bbc;
+--muted:rgba(0,48,73,.62);--rule:rgba(0,48,73,.22);--track:rgba(0,48,73,.10);
+--serif:"Noto Serif TC","Songti TC","PMingLiU","Noto Serif CJK TC",serif;
+--sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei","Noto Sans CJK TC",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#2a2a2a}
+body{font-family:var(--sans);color:var(--navy);font-size:10.5pt;line-height:1.75}
+.page{width:210mm;margin:24px auto;background:var(--cream);padding:18mm 18mm 20mm}
+h1{font-family:var(--serif);font-size:26pt;font-weight:700;line-height:1.3}
+h2{font-family:var(--serif);font-size:15pt;font-weight:700;margin:1.6em 0 .6em;padding-bottom:.3em;border-bottom:1px solid var(--rule);break-after:avoid}
+h3{font-family:var(--serif);font-size:11.5pt;font-weight:500;margin:1.1em 0 .4em;break-after:avoid}
+.kicker{font-size:9pt;letter-spacing:.18em;color:var(--red);font-weight:500;margin-bottom:.6em}
+.sub{font-family:var(--serif);font-size:13pt;margin-top:.3em}
+.top .rule{width:3em;height:2px;background:var(--red);margin:1em 0}
+.meta{font-size:9pt;color:var(--muted)}
+p{margin:.4em 0} ul,ol{padding-left:1.4em;margin:.4em 0} li{margin:.25em 0} li::marker{color:var(--sky)}
+b{font-weight:500}
+.cite{color:var(--sky);font-size:.85em}
+.inf{color:var(--red);font-size:.85em;white-space:nowrap}
+.note{font-size:9pt;color:var(--muted)}
+table{width:100%;border-collapse:collapse;border-top:1px solid var(--navy);border-bottom:1px solid var(--navy);margin:.6em 0;break-inside:avoid;font-size:9.5pt}
+th{font-weight:500;text-align:left;padding:.35em .5em;border-bottom:1px solid var(--rule)}
+td{padding:.32em .5em;border-bottom:1px solid var(--rule);vertical-align:top}
+tr:last-child td{border-bottom:0}
+table.map td:not(:first-child),table.map th:not(:first-child){text-align:center;color:var(--wine)}
+figure{margin:.8em 0 1em;break-inside:avoid}
+figure svg{max-width:150mm;display:block}
+figcaption{font-size:8.5pt;color:var(--muted);margin-top:.3em;border-top:1px solid var(--rule);padding-top:.3em}
+.bars{display:flex;flex-direction:column;gap:.55em;max-width:120mm}
+.bar{display:grid;grid-template-columns:6em 1fr 4.5em;align-items:center;gap:.8em}
+.bar .track{height:.45em;background:var(--track)} .bar .fill{height:100%}
+ol.take{list-style:none;counter-reset:t;padding:0}
+ol.take li{counter-increment:t;font-family:var(--serif);font-size:12pt;padding:.5em 0 .5em 2.6em;position:relative;border-top:1px solid var(--wine)}
+ol.take li::before{content:counter(t,decimal-leading-zero);position:absolute;left:0;color:var(--wine);font-weight:700}
+.gl td:first-child{white-space:nowrap}
+.refs p{font-size:9pt;line-height:1.55;padding-left:2em;text-indent:-2em;margin-bottom:.6em}
+section{break-inside:auto}
+@page{size:A4;margin:0}
+@media print{html{background:var(--cream)}.page{margin:0;width:auto;padding:14mm 18mm;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact;background:var(--cream)}}
+</style></head>
+<body><main class="page">
+<header class="top">
+  <div class="kicker">生成式 AI 課程報告 ｜ 講義</div>
+  <h1>健康數據 × AI</h1>
+  <p class="sub">從資料、預測模型，到 AI 的可靠度</p>
+  <div class="rule"></div>
+</header>
+
+<section>
+<h2>1　報告地圖</h2>
+<p>本報告用 5 篇文獻串起四個子主題：健康數據、NLP、預測模型與 AI。下表的 ● 代表該篇直接談到這個子主題；○ 代表可當對照——Kausch 用的是傳統統計而不是 AI <span class="cite">（Kausch et al., 2024, PDF p.5）</span>。可以看出 NLP 目前只有 Omar 一篇，這是本知識庫的缺口，第 5 節會再談。</p>
+<table class="map">
+<tr><th>子主題</th><th>Omar 2025</th><th>ADA 2026</th><th>Lin 2022</th><th>Kausch 2024</th><th>Lubitz 2022</th></tr>
+<tr><td>健康數據</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr>
+<tr><td>NLP</td><td>●</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>預測模型</td><td></td><td>●</td><td>●</td><td>●</td><td>●</td></tr>
+<tr><td>AI</td><td>●</td><td></td><td>●</td><td>○</td><td>●</td></tr>
+</table>
+</section>
+
+<section>
+<h2>2　健康數據</h2>
+<h3>2.1　資料從哪來：四種資料型態</h3>
+<ul>
+<li><b>單次檢查</b>：Lin 用急診的 12 導程心電圖配上抽血結果，兩家醫院共 34,803 + 6,492 次急診 <span class="cite">（Lin et al., 2022, p.1）</span>；ADA 的血糖檢查（A1C、OGTT）也屬這類 <span class="cite">（ADA, 2026, p.S51）</span>。</li>
+<li><b>連續監測</b>：Kausch 用新生兒加護病房（NICU）床邊監視器的連續訊號，共 47,512 個住院日 <span class="cite">（Kausch et al., 2024, PDF p.6）</span>。</li>
+<li><b>穿戴裝置</b>：Lubitz 用手錶的 PPG（光照皮膚量脈搏），收了 455,699 人 <span class="cite">（Lubitz et al., 2022, p.1415）</span>。</li>
+<li><b>文字</b>：Omar 用 300 例醫師驗證過的模擬病例，不是真實病歷 <span class="cite">（Omar et al., 2025, p.2）</span>。</li>
+</ul>
+<h3>2.2　預測目標：要有切點、持續時間與確認方式</h3>
+<p>做預測之前，先要說清楚「怎樣才算有」與「誰來確認」。四篇的定義如下：</p>
+<table>
+<tr><th>結果</th><th>定義</th><th>來源</th></tr>
+<tr><td>糖尿病前期</td><td>A1C 5.7–6.4%，或 IGT、IFG</td><td>ADA, 2026, p.S51</td></tr>
+<tr><td>晚發性敗血症</td><td>出生 72 小時後血液培養陽性，且抗生素 ≥5 天</td><td>Kausch et al., 2024, PDF p.4</td></tr>
+<tr><td>心房顫動</td><td>心電圖上持續 ≥30 秒</td><td>Lubitz et al., 2022, p.1417</td></tr>
+<tr><td>重度高鉀</td><td>血鉀 ≥6.5 mmol/L（共分 7 級）</td><td>Lin et al., 2022, p.10</td></tr>
+</table>
+<p class="note">ADA 是臨床指引，授權限制禁止文字探勘與機器學習用途，本講義只引用切點數字，不重畫其圖表。</p>
+<h3>2.3　預測特徵：由人挑，或讓模型自己學</h3>
+<ul>
+<li><b>臨床風險因子</b>（人挑）：BMI、血糖、妊娠糖尿病史 <span class="cite">（ADA, 2026, p.S53–S56）</span>。</li>
+<li><b>事件指標</b>（人挑）：呼吸暫停、心跳過慢等醫師在床邊認得的事件 <span class="cite">（Kausch et al., 2024, PDF p.4）</span>。</li>
+<li><b>原始波形</b>（模型學）：12 導程心電圖直接丟進深度學習模型 <span class="cite">（Lin et al., 2022, p.10）</span>。</li>
+<li><b>視窗序列</b>（模型學）：靜止時 5 分鐘的脈搏間隔序列 <span class="cite">（Lubitz et al., 2022, p.1416）</span>。</li>
+</ul>
+<p>越往下越依賴模型自己找規則，可解釋性也越低 <span class="inf">⚠️ 推論</span>。</p>
+</section>
+
+<section>
+<h2>3　預測模型</h2>
+<h3>3.1　時間怎麼標記：「未來會不會發生」vs.「現在有沒有」</h3>
+<p>同樣是時間序列資料，Kausch 是<b>提前預測</b>：每位寶寶每天一列，確診日與前 2 天標為 1，其他天標為 0，確診後 10 天的治療與恢復期不納入，避免標籤被治療污染 <span class="cite">（Kausch et al., 2024, PDF p.5）</span>。Lubitz 是<b>同時偵測</b>：把靜止時的脈搏切成 5 分鐘、重疊 50% 的視窗，連續 11 段都不規則（≥30 分鐘）才發通知 <span class="cite">（Lubitz et al., 2022, p.1416）</span>。</p>
+<figure><svg viewBox="0 0 960 300" width="100%" role="img" aria-label="時間序列結果標記：Kausch 與 Lubitz"><text x="20" y="24" font-size="16" fill="#003049" text-anchor="start" font-weight="500" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">Kausch：每天一列，標記「未來 3 天內是否確診」</text><g class="hot cell" data-info="第 -5 天：距確診 3 天以上 → 標 0（Kausch PDF p.5）"><rect x="20" y="40" width="80" height="44" fill="#fdf0d5" stroke="#003049" stroke-width="1"/><text x="60.0" y="69" font-size="18" fill="#003049" text-anchor="middle" font-weight="500" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">0</text></g><text x="60.0" y="106" font-size="13" fill="rgba(0,48,73,.62)" text-anchor="middle" font-weight="400" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">-5</text><g class="hot cell" data-info="第 -4 天：距確診 3 天以上 → 標 0（Kausch PDF p.5）"><rect x="108" y="40" width="80" height="44" fill="#fdf0d5" stroke="#003049" stroke-width="1"/><text x="148.0" y="69" font-size="18" fill="#003049" text-anchor="middle" font-weight="500" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">0</text></g><text x="148.0" y="106" font-size="13" fill="rgba(0,48,73,.62)" text-anchor="middle" font-weight="400" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">-4</text><g class="hot cell" data-info="第 -3 天：距確診 3 天以上 → 標 0（Kausch PDF p.5）"><rect x="196" y="40" width="80" height="44" fill="#fdf0d5" stroke="#003049" stroke-width="1"/><text x="236.0" y="69" font-size="18" fill="#003049" text-anchor="middle" font-weight="500" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">0</text></g><text x="236.0" y="106" font-size="13" fill="rgba(0,48,73,.62)" text-anchor="middle" font-weight="400" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">-3</text><g class="hot cell" data-info="第 -2 天：落在「未來 3 天內」→ 標 1（Kausch PDF p.5）"><rect x="284" y="40" width="80" height="44" fill="#fdf0d5" stroke="#780000" stroke-width="2"/><text x="324.0" y="69" font-size="18" fill="#780000" text-anchor="middle" font-weight="500" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">1</text></g><text x="324.0" y="106" font-size="13" fill="rgba(0,48,73,.62)" text-anchor="middle" font-weight="400" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">-2</text><g class="hot cell" data-info="第 -1 天：落在「未來 3 天內」→ 標 1（Kausch PDF p.5）"><rect x="372" y="40" width="80" height="44" fill="#fdf0d5" stroke="#780000" stroke-width="2"/><text x="412.0" y="69" font-size="18" fill="#780000" text-anchor="middle" font-weight="500" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">1</text></g><text x="412.0" y="106" font-size="13" fill="rgba(0,48,73,.62)" text-anchor="middle" font-weight="400" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">-1</text><g class="hot cell" data-info="第 0 天：落在「未來 3 天內」→ 標 1（Kausch PDF p.5）"><rect x="460" y="40" width="80" height="44" fill="#fdf0d5" stroke="#780000" stroke-width="2"/><text x="500.0" y="69" font-size="18" fill="#780000" text-anchor="middle" font-weight="500" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">1</text></g><text x="500.0" y="106" font-size="13" fill="rgba(0,48,73,.62)" text-anchor="middle" font-weight="400" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">0（確診日）</text><g class="hot cell" data-info="+1 … +10：治療與恢復期，不納入分析（Kausch PDF p.5）"><rect x="548" y="40" width="240" height="44" fill="#fdf0d5" stroke="#669bbc" stroke-width="1.2" stroke-dasharray="5 4"/><text x="668.0" y="69" font-size="18" fill="#669bbc" text-anchor="middle" font-weight="500" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">排除</text></g><text x="668.0" y="106" font-size="13" fill="rgba(0,48,73,.62)" text-anchor="middle" font-weight="400" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">+1 … +10</text><g class="hot cell" data-info="+11：恢復後重新開始 → 標 0（Kausch PDF p.5）"><rect x="796" y="40" width="80" height="44" fill="#fdf0d5" stroke="#003049" stroke-width="1"/><text x="836.0" y="69" font-size="18" fill="#003049" text-anchor="middle" font-weight="500" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">0</text></g><text x="836.0" y="106" font-size="13" fill="rgba(0,48,73,.62)" text-anchor="middle" font-weight="400" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">+11</text><line x1="284" y1="120" x2="540" y2="120" stroke="#780000" stroke-width="1.5"/><text x="412.0" y="142" font-size="14" fill="#780000" text-anchor="middle" font-weight="400" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">敗血症 = 1（確診日與前 2 天）</text><line x1="548" y1="120" x2="788" y2="120" stroke="#669bbc" stroke-width="1.5"/><text x="668.0" y="142" font-size="14" fill="#669bbc" text-anchor="middle" font-weight="400" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">治療與恢復期，不納入</text><text x="20" y="190" font-size="16" fill="#003049" text-anchor="start" font-weight="500" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">Lubitz：5 分鐘視窗、重疊 50%，連續 11 段不規則才發通知</text><g class="hot seg" data-info="第 1 段：5 分鐘，每 2.5 分鐘取一段；連續 11 段不規則才通知（Lubitz p.1416）"><line x1="20" y1="214" x2="120" y2="214" stroke="transparent" stroke-width="14"/><line class="vis" x1="20" y1="214" x2="120" y2="214" stroke="#003049" stroke-width="3"/></g><line x1="20" y1="208" x2="20" y2="220" stroke="#003049" stroke-width="1.5"/><line x1="120" y1="208" x2="120" y2="220" stroke="#003049" stroke-width="1.5"/><g class="hot seg" data-info="第 2 段：5 分鐘，每 2.5 分鐘取一段；連續 11 段不規則才通知（Lubitz p.1416）"><line x1="75" y1="228" x2="175" y2="228" stroke="transparent" stroke-width="14"/><line class="vis" x1="75" y1="228" x2="175" y2="228" stroke="#003049" stroke-width="3"/></g><line x1="75" y1="222" x2="75" y2="234" stroke="#003049" stroke-width="1.5"/><line x1="175" y1="222" x2="175" y2="234" stroke="#003049" stroke-width="1.5"/><g class="hot seg" data-info="第 3 段：5 分鐘，每 2.5 分鐘取一段；連續 11 段不規則才通知（Lubitz p.1416）"><line x1="130" y1="214" x2="230" y2="214" stroke="transparent" stroke-width="14"/><line class="vis" x1="130" y1="214" x2="230" y2="214" stroke="#003049" stroke-width="3"/></g><line x1="130" y1="208" x2="130" y2="220" stroke="#003049" stroke-width="1.5"/><line x1="230" y1="208" x2="230" y2="220" stroke="#003049" stroke-width="1.5"/><g class="hot seg" data-info="第 4 段：5 分鐘，每 2.5 分鐘取一段；連續 11 段不規則才通知（Lubitz p.1416）"><line x1="185" y1="228" x2="285" y2="228" stroke="transparent" stroke-width="14"/><line class="vis" x1="185" y1="228" x2="285" y2="228" stroke="#003049" stroke-width="3"/></g><line x1="185" y1="222" x2="185" y2="234" stroke="#003049" stroke-width="1.5"/><line x1="285" y1="222" x2="285" y2="234" stroke="#003049" stroke-width="1.5"/><g class="hot seg" data-info="第 5 段：5 分鐘，每 2.5 分鐘取一段；連續 11 段不規則才通知（Lubitz p.1416）"><line x1="240" y1="214" x2="340" y2="214" stroke="transparent" stroke-width="14"/><line class="vis" x1="240" y1="214" x2="340" y2="214" stroke="#003049" stroke-width="3"/></g><line x1="240" y1="208" x2="240" y2="220" stroke="#003049" stroke-width="1.5"/><line x1="340" y1="208" x2="340" y2="220" stroke="#003049" stroke-width="1.5"/><g class="hot seg" data-info="第 6 段：5 分鐘，每 2.5 分鐘取一段；連續 11 段不規則才通知（Lubitz p.1416）"><line x1="295" y1="228" x2="395" y2="228" stroke="transparent" stroke-width="14"/><line class="vis" x1="295" y1="228" x2="395" y2="228" stroke="#003049" stroke-width="3"/></g><line x1="295" y1="222" x2="295" y2="234" stroke="#003049" stroke-width="1.5"/><line x1="395" y1="222" x2="395" y2="234" stroke="#003049" stroke-width="1.5"/><g class="hot seg" data-info="第 7 段：5 分鐘，每 2.5 分鐘取一段；連續 11 段不規則才通知（Lubitz p.1416）"><line x1="350" y1="214" x2="450" y2="214" stroke="transparent" stroke-width="14"/><line class="vis" x1="350" y1="214" x2="450" y2="214" stroke="#003049" stroke-width="3"/></g><line x1="350" y1="208" x2="350" y2="220" stroke="#003049" stroke-width="1.5"/><line x1="450" y1="208" x2="450" y2="220" stroke="#003049" stroke-width="1.5"/><g class="hot seg" data-info="第 8 段：5 分鐘，每 2.5 分鐘取一段；連續 11 段不規則才通知（Lubitz p.1416）"><line x1="405" y1="228" x2="505" y2="228" stroke="transparent" stroke-width="14"/><line class="vis" x1="405" y1="228" x2="505" y2="228" stroke="#003049" stroke-width="3"/></g><line x1="405" y1="222" x2="405" y2="234" stroke="#003049" stroke-width="1.5"/><line x1="505" y1="222" x2="505" y2="234" stroke="#003049" stroke-width="1.5"/><g class="hot seg" data-info="第 9 段：5 分鐘，每 2.5 分鐘取一段；連續 11 段不規則才通知（Lubitz p.1416）"><line x1="460" y1="214" x2="560" y2="214" stroke="transparent" stroke-width="14"/><line class="vis" x1="460" y1="214" x2="560" y2="214" stroke="#003049" stroke-width="3"/></g><line x1="460" y1="208" x2="460" y2="220" stroke="#003049" stroke-width="1.5"/><line x1="560" y1="208" x2="560" y2="220" stroke="#003049" stroke-width="1.5"/><g class="hot seg" data-info="第 10 段：5 分鐘，每 2.5 分鐘取一段；連續 11 段不規則才通知（Lubitz p.1416）"><line x1="515" y1="228" x2="615" y2="228" stroke="transparent" stroke-width="14"/><line class="vis" x1="515" y1="228" x2="615" y2="228" stroke="#003049" stroke-width="3"/></g><line x1="515" y1="222" x2="515" y2="234" stroke="#003049" stroke-width="1.5"/><line x1="615" y1="222" x2="615" y2="234" stroke="#003049" stroke-width="1.5"/><g class="hot seg" data-info="第 11 段：5 分鐘，每 2.5 分鐘取一段；連續 11 段不規則才通知（Lubitz p.1416）"><line x1="570" y1="214" x2="670" y2="214" stroke="transparent" stroke-width="14"/><line class="vis" x1="570" y1="214" x2="670" y2="214" stroke="#003049" stroke-width="3"/></g><line x1="570" y1="208" x2="570" y2="220" stroke="#003049" stroke-width="1.5"/><line x1="670" y1="208" x2="670" y2="220" stroke="#003049" stroke-width="1.5"/><line x1="684" y1="221" x2="726" y2="221" stroke="#780000" stroke-width="1.5"/><polyline points="718,215 726,221 718,227" fill="none" stroke="#780000" stroke-width="1.5"/><text x="736" y="227" font-size="16" fill="#780000" text-anchor="start" font-weight="500" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">發出通知</text><line x1="20" y1="250" x2="670" y2="250" stroke="#669bbc" stroke-width="1.5"/><text x="345.0" y="274" font-size="14" fill="#669bbc" text-anchor="middle" font-weight="400" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">≥30 分鐘（連續 11 段），只用靜止時段</text></svg><figcaption>圖 1｜兩種時間序列標記方式。資料來源：Kausch et al. (2024), PDF p.5；Lubitz et al. (2022), p.1416。自製示意圖。</figcaption></figure>
+<h3>3.2　六個可以直接借用的研究設計</h3>
+<ol>
+<li><b>黑盒子實用研究</b>：AI 在背景即時運算，但不顯示給醫師，醫師的處置就不會被 AI 影響 <span class="cite">（Lin et al., 2022, p.10）</span>。</li>
+<li><b>外部驗證</b>：在開發醫院之外，換一家醫院再測一次 <span class="cite">（Lin et al., 2022, p.2）</span>。</li>
+<li><b>逐步加入變項</b>：每加一組變項就看 AUC 增加多少，看出各組變項的貢獻 <span class="cite">（Kausch et al., 2024, PDF p.5）</span>。</li>
+<li><b>校正重複測量</b>：同一個寶寶每天一列、同一病例被測多次，資料彼此相關，需要校正 <span class="cite">（Kausch et al., 2024, PDF p.5；Omar et al., 2025, p.3）</span>。</li>
+<li><b>事先註冊、固定演算法</b>：研究開始前就把演算法鎖定，中途不改 <span class="cite">（Lubitz et al., 2022, p.1417）</span>。</li>
+<li><b>事先計算樣本數</b> <span class="cite">（Lubitz et al., 2022, p.1417）</span>。</li>
+</ol>
+<h3>3.3　表現要連驗證方式一起看</h3>
+<p>Lin 在教學醫院與社區醫院都測了（社區醫院即外部驗證），重度血鉀異常的 AUC 都在 0.9 以上；Kausch 只做 10 折交叉驗證（內部驗證），完整模型 AUC 0.783。兩者任務與驗證方式不同，AUC 不能直接比高低 <span class="inf">⚠️ 推論</span>。</p>
+<figure><svg viewBox="0 0 800 312" width="100%" role="img" aria-label="各研究 AUC 點圖"><circle cx="200" cy="18" r="6" fill="#003049"/><text x="212" y="24" font-size="17" fill="#003049" text-anchor="start" font-weight="400" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">教學醫院</text><circle cx="395" cy="18" r="6" fill="#780000"/><text x="407" y="24" font-size="17" fill="#003049" text-anchor="start" font-weight="400" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">社區醫院（外部）</text><circle cx="590" cy="18" r="6" fill="#669bbc"/><text x="602" y="24" font-size="17" fill="#003049" text-anchor="start" font-weight="400" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">交叉驗證（內部）</text><line x1="215.0" y1="40" x2="215.0" y2="262" stroke="rgba(0,48,73,.22)" stroke-width="1"/><text x="215.0" y="284" font-size="16" fill="rgba(0,48,73,.62)" text-anchor="middle" font-weight="400" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">0.70</text><line x1="401.66666666666686" y1="40" x2="401.66666666666686" y2="262" stroke="rgba(0,48,73,.22)" stroke-width="1"/><text x="401.66666666666686" y="284" font-size="16" fill="rgba(0,48,73,.62)" text-anchor="middle" font-weight="400" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">0.80</text><line x1="588.3333333333335" y1="40" x2="588.3333333333335" y2="262" stroke="rgba(0,48,73,.22)" stroke-width="1"/><text x="588.3333333333335" y="284" font-size="16" fill="rgba(0,48,73,.62)" text-anchor="middle" font-weight="400" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">0.90</text><line x1="775.0000000000001" y1="40" x2="775.0000000000001" y2="262" stroke="rgba(0,48,73,.22)" stroke-width="1"/><text x="775.0000000000001" y="284" font-size="16" fill="rgba(0,48,73,.62)" text-anchor="middle" font-weight="400" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">1.00</text><line x1="215" y1="262" x2="775" y2="262" stroke="#003049" stroke-width="1"/><text x="0" y="78" font-size="18" fill="#003049" text-anchor="start" font-weight="400" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">Lin｜重度低鉀</text><line x1="215" y1="72" x2="775" y2="72" stroke="rgba(0,48,73,.22)" stroke-width="1" stroke-dasharray="2 4"/><circle class="hot pt" data-info="Lin｜重度低鉀｜教學醫院：AUC 0.9497（Lin p.2）" cx="681.1" cy="72" r="8" fill="#003049"/><text x="681.1066666666668" y="59" font-size="17" fill="#003049" text-anchor="middle" font-weight="500" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">0.9497</text><circle class="hot pt" data-info="Lin｜重度低鉀｜社區醫院（外部驗證）：AUC 0.9194（Lin p.2）" cx="624.5" cy="72" r="8" fill="#780000"/><text x="624.5466666666667" y="97" font-size="17" fill="#780000" text-anchor="middle" font-weight="500" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">0.9194</text><text x="0" y="130" font-size="18" fill="#003049" text-anchor="start" font-weight="400" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">Lin｜重度高鉀</text><line x1="215" y1="124" x2="775" y2="124" stroke="rgba(0,48,73,.22)" stroke-width="1" stroke-dasharray="2 4"/><circle class="hot pt" data-info="Lin｜重度高鉀｜教學醫院：AUC 0.9658（Lin p.2）" cx="711.2" cy="124" r="8" fill="#003049"/><text x="711.1600000000001" y="111" font-size="17" fill="#003049" text-anchor="middle" font-weight="500" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">0.9658</text><circle class="hot pt" data-info="Lin｜重度高鉀｜社區醫院（外部驗證）：AUC 0.9865（Lin p.2）" cx="749.8" cy="124" r="8" fill="#780000"/><text x="749.8000000000002" y="149" font-size="17" fill="#780000" text-anchor="middle" font-weight="500" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">0.9865</text><text x="0" y="182" font-size="18" fill="#003049" text-anchor="start" font-weight="400" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">Kausch｜只用 PMA</text><line x1="215" y1="176" x2="775" y2="176" stroke="rgba(0,48,73,.22)" stroke-width="1" stroke-dasharray="2 4"/><circle class="hot pt" data-info="Kausch｜只用 PMA｜10 折交叉驗證（內部）：AUC 0.739（Kausch PDF p.18）" cx="287.8" cy="176" r="8" fill="#669bbc"/><text x="287.80000000000007" y="163" font-size="17" fill="#669bbc" text-anchor="middle" font-weight="500" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">0.739</text><text x="0" y="234" font-size="18" fill="#003049" text-anchor="start" font-weight="400" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">Kausch｜完整模型</text><line x1="215" y1="228" x2="775" y2="228" stroke="rgba(0,48,73,.22)" stroke-width="1" stroke-dasharray="2 4"/><circle class="hot pt" data-info="Kausch｜完整模型｜10 折交叉驗證（內部）：AUC 0.783（Kausch PDF p.18）" cx="369.9" cy="228" r="8" fill="#669bbc"/><text x="369.9333333333335" y="215" font-size="17" fill="#669bbc" text-anchor="middle" font-weight="500" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">0.783</text><text x="495" y="306" font-size="16" fill="rgba(0,48,73,.62)" text-anchor="middle" font-weight="400" style="font-family:Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">AUC</text></svg><figcaption>圖 2｜各研究的 AUC 與驗證方式。資料來源：Lin et al. (2022), p.2；Kausch et al. (2024), PDF p.18。自製。</figcaption></figure>
+<table>
+<tr><th>研究</th><th>驗證方式</th><th>來源</th></tr>
+<tr><td>Lin</td><td>外部驗證（同體系社區醫院）</td><td>Lin et al., 2022, p.2</td></tr>
+<tr><td>Kausch</td><td>內部驗證（10 折交叉驗證）</td><td>Kausch et al., 2024, PDF p.5</td></tr>
+<tr><td>Lubitz</td><td>前瞻性，以心電圖貼片為參考標準；敏感度 67.6%</td><td>Lubitz et al., 2022, p.1419</td></tr>
+</table>
+<p class="note">Lin 的社區醫院和教學醫院屬同一醫療體系，對其他體系的外推仍有限 <span class="inf">⚠️ 推論</span>。</p>
+<h3>3.4　自己跑模型需要的技術：以穿戴裝置偵測 AF 為例</h3>
+<p>Lubitz 沒有公開演算法，以下除標頁碼者外，都是一般做法 <span class="inf">⚠️ 推論</span>。</p>
+<table>
+<tr><th>步驟</th><th>要做什麼</th><th>常用工具</th></tr>
+<tr><td>1 資料</td><td>PPG＋同步心電圖標註</td><td>公開資料庫或自行收案</td></tr>
+<tr><td>2 前處理</td><td>濾波、找脈搏峰值</td><td>SciPy、NeuroKit2</td></tr>
+<tr><td>3 切視窗</td><td>5 分鐘、重疊 50%（Lubitz et al., 2022, p.1416）</td><td>pandas</td></tr>
+<tr><td>4 特徵</td><td>心率變異度</td><td>RMSSD 等指標</td></tr>
+<tr><td>5 模型</td><td>每段是否不規則</td><td>XGBoost、CNN</td></tr>
+<tr><td>6 評估</td><td>以「人」切分訓練與測試，避免同一人兩邊都出現</td><td>Python、R</td></tr>
+</table>
+<p class="note">論文本身使用 Python 3.7 與 R 4.1.0 <span class="cite">（Lubitz et al., 2022, p.1418）</span>。</p>
+</section>
+
+<section>
+<h2>4　AI</h2>
+<h3>4.1　AI「判錯」，反而有訊號</h3>
+<p>Lin 發現：抽血正常、AI 卻判斷血鉀異常的病人，30 天死亡風險反而較高。</p>
+<table>
+<tr><th>組別（對照：血鉀正常）</th><th>30 天死亡 HR（95% CI）</th></tr>
+<tr><td>抽血高鉀</td><td>3.66（3.02–4.44）</td></tr>
+<tr><td>抽血正常、AI 判低鉀</td><td>1.40（1.16–1.69）</td></tr>
+<tr><td>抽血正常、AI 判高鉀</td><td>1.49（1.00–2.24）</td></tr>
+</table>
+<p class="note">來源：Lin et al., 2022, p.2, p.4。</p>
+<p>作者的解釋是：模型除了學到血鉀造成的心電圖變化，也可能學到了造成血鉀異常的疾病特徵 <span class="cite">（Lin et al., 2022, p.9）</span>。這屬觀察性發現，不代表因果 <span class="inf">⚠️ 推論</span>。</p>
+<h3>4.2　AI × NLP：LLM 會被假資訊帶著走</h3>
+<p>Omar 在模擬病例裡藏一個假資訊，6 個大型語言模型有 50–82% 會照單全收 <span class="cite">（Omar et al., 2025, p.1）</span>。加上防護指令能降低（OR 0.27），但無法消除；把溫度調低則沒有效果 <span class="cite">（Omar et al., 2025, p.3）</span>。</p>
+<figure><div class="bars"><div class="bar hot" data-info="預設：各廠商標準設定，65.9%（Omar p.3）"><span>預設</span><div class="track"><div class="fill" style="width:65.9%;background:#003049"></div></div><span><b style="color:#003049">65.9%</b></span></div><div class="bar hot" data-info="防護指令：44.2%，OR 0.27（95% CI 0.23–0.32）（Omar p.3）"><span>防護指令</span><div class="track"><div class="fill" style="width:44.2%;background:#780000"></div></div><span><b style="color:#780000">44.2%</b></span></div><div class="bar hot" data-info="溫度 0：66.5%，OR 1.05，無顯著差異（Omar p.3）"><span>溫度 0</span><div class="track"><div class="fill" style="width:66.5%;background:#003049"></div></div><span><b style="color:#003049">66.5%</b></span></div></div><figcaption>圖 3｜三種條件下的整體幻覺率。資料來源：Omar et al. (2025), p.3。自製。</figcaption></figure>
+<p class="note">GPT-4o 同時是受測模型和評審，結果可能偏向它 <span class="inf">⚠️ 推論</span>。</p>
+<h3>4.3　同樣叫 AI，可靠度差很多</h3>
+<table>
+<tr><th>類型</th><th>特性</th><th>來源</th></tr>
+<tr><td>生成式 LLM</td><td>通用、讀文字，易被錯誤輸入誤導</td><td>Omar et al., 2025, p.3</td></tr>
+<tr><td>單一任務深度學習</td><td>真實資料＋外部驗證，表現穩定</td><td>Lin et al., 2022, p.2</td></tr>
+<tr><td>傳統統計</td><td>特徵可解釋，但只有內部驗證</td><td>Kausch et al., 2024, PDF p.5</td></tr>
+</table>
+<p>評讀 AI 研究時，先看任務、資料、驗證方式，再看數字 <span class="inf">⚠️ 推論</span>。</p>
+</section>
+
+<section>
+<h2>5　Limitations and Future Work</h2>
+<h3>作者自述的限制</h3>
+<table>
+<tr><th>研究</th><th>主要限制</th><th>來源</th></tr>
+<tr><td>Omar</td><td>模擬病例；每題只跑一次</td><td>p.6</td></tr>
+<tr><td>Lin</td><td>只有東亞族群；未評估提早處置是否改善結果</td><td>p.10</td></tr>
+<tr><td>Kausch</td><td>以天為單位，可能錯過快速惡化</td><td>PDF p.8</td></tr>
+<tr><td>Lubitz</td><td>敏感度不完美；參與者偏向既有使用者</td><td>p.1423</td></tr>
+</table>
+<h3>Future Work</h3>
+<ul>
+<li><b>外部驗證</b>：Kausch 只有內部驗證 <span class="cite">（Kausch et al., 2024, PDF p.5）</span>。</li>
+<li><b>亞洲族群</b>：Lubitz 的參與者亞裔僅 2.9% <span class="cite">（Lubitz et al., 2022, p.1420）</span>。</li>
+<li><b>用真實病歷測試 LLM</b>：Omar 只用模擬病例 <span class="cite">（Omar et al., 2025, p.6）</span>。</li>
+<li><b>補 NLP 文獻</b>：本知識庫缺少「用 NLP 從病歷抽特徵做預測」的研究，下一步補論文 <span class="inf">⚠️ 推論</span>。</li>
+</ul>
+</section>
+
+<section>
+<h2>6　Critical Thinking</h2>
+<p>讀 AI 研究時，可以先問這四個問題（本報告歸納 <span class="inf">⚠️ 推論</span>）。這些不代表研究錯，而是解讀數字時要打折扣的地方。</p>
+<table>
+<tr><th>問題</th><th>本次文獻的例子</th><th>來源</th></tr>
+<tr><td>誰出資？</td><td>Fitbit 出資；Kausch 兩位作者持股</td><td>Lubitz p.1418；Kausch PDF p.1</td></tr>
+<tr><td>誰當評審？</td><td>GPT-4o 同時是受測模型與評審</td><td>Omar p.2–3</td></tr>
+<tr><td>驗證夠獨立嗎？</td><td>外部驗證醫院屬同一醫療體系</td><td>Lin p.2</td></tr>
+<tr><td>能重現嗎？</td><td>資料或程式碼未公開</td><td>Lin p.11；Omar p.6；Lubitz p.1418</td></tr>
+</table>
+</section>
+
+<section>
+<h2>7　自我檢測</h2>
+<ol>
+<li>Kausch 怎麼標記「敗血症」？ A 只有確診當天標 1｜B 確診日與前 2 天標 1｜C 住院期間全部標 1</li>
+<li>哪一篇做了外部驗證？ A Lin｜B Kausch｜C Omar</li>
+<li>哪個方法能降低 LLM 幻覺？ A 溫度調成 0｜B 加防護指令｜C 改用短版病例</li>
+</ol>
+<p class="note">答案：1 B——預測「未來 3 天內」，確診後 10 天排除 <span class="cite">（Kausch et al., 2024, PDF p.5）</span>；2 A——Lin 在同體系社區醫院驗證 <span class="cite">（Lin et al., 2022, p.2）</span>；3 B——防護指令 65.9% → 44.2%，溫度 0 無效，短版反而稍微更容易出錯，OR 1.22 <span class="cite">（Omar et al., 2025, p.3）</span>。</p>
+</section>
+
+<section>
+<h2>8　Take-home</h2>
+<ol class="take">
+<li>先定義結果與時間窗，再談模型。</li>
+<li>驗證方式決定數字能信多少。</li>
+<li>AI 不是同一種東西：看任務、資料、驗證。</li>
+</ol>
+<p class="note">本報告歸納 <span class="inf">⚠️ 推論</span>。</p>
+</section>
+
+<section>
+<h2>附錄 A　術語表</h2>
+<table class="gl"><tr><th>術語</th><th>英文</th><th>白話解釋</th></tr><tr><td>大型語言模型</td><td>LLM</td><td>讀過大量文字、會產生回答的 AI，例如 ChatGPT</td></tr><tr><td>幻覺</td><td>Hallucination</td><td>AI 一本正經地講出不存在的事</td></tr><tr><td>溫度</td><td>Temperature</td><td>控制 AI 回答隨機程度的設定；0 = 每次都一樣</td></tr><tr><td>深度學習</td><td>Deep learning</td><td>用多層神經網路從大量資料自己找規則</td></tr><tr><td>卷積神經網路</td><td>CNN</td><td>擅長處理圖片和波形的深度學習模型</td></tr><tr><td>光體積變化描記法</td><td>PPG</td><td>手錶用光照皮膚量脈搏</td></tr><tr><td>滑動視窗</td><td>Sliding window</td><td>把連續訊號切成重疊的小段分別判斷</td></tr><tr><td>心率變異度</td><td>HRV</td><td>心跳間隔的變化程度</td></tr><tr><td>矯正年齡</td><td>PMA</td><td>懷孕週數 + 出生後週數</td></tr><tr><td>曲線下面積</td><td>AUC</td><td>模型分辨有病／沒病的能力，0.5 亂猜、1 完美</td></tr><tr><td>敏感度</td><td>Sensitivity</td><td>真的有病的人，模型抓到幾成</td></tr><tr><td>外部驗證</td><td>External validation</td><td>用另一家醫院的資料測試模型</td></tr><tr><td>交叉驗證</td><td>Cross-validation</td><td>資料分 10 份輪流當考卷，屬內部驗證</td></tr><tr><td>黑盒子實用研究</td><td>Black-box pragmatic study</td><td>AI 在真實流程中運算但不給醫師看，避免影響處置</td></tr><tr><td>群集穩健標準誤</td><td>Huber-White</td><td>校正同一個人重複測量造成的高估</td></tr><tr><td>風險比</td><td>HR</td><td>兩組「發生速度」差幾倍，考慮時間</td></tr><tr><td>勝算比</td><td>OR</td><td>兩組「發生勝算」差幾倍；1 = 沒差</td></tr><tr><td>糖尿病前期</td><td>Prediabetes</td><td>血糖偏高但未達糖尿病，像黃燈</td></tr><tr><td>TRIPOD</td><td>TRIPOD</td><td>預測模型論文的報告檢查清單</td></tr></table>
+<p class="note">取自本知識庫 glossary。</p>
+</section>
+
+<section class="refs">
+<h2>附錄 B　參考文獻（APA 7）</h2>
+<p>American Diabetes Association Professional Practice Committee for Diabetes. (2026). 3. Prevention or delay of diabetes and associated comorbidities: Standards of care in diabetes—2026. <i>Diabetes Care, 49</i>(Suppl. 1), S50–S60. https://doi.org/10.2337/dc26-S003</p>
+<p>Kausch, S. L., Lake, D. E., Di Fiore, J. M., Weese-Mayer, D. E., Claure, N., Ambalavanan, N., Vesoulis, Z. A., Fairchild, K. D., Dennery, P. A., Hibbs, A. M., Martin, R. J., Indic, P., Travers, C. P., Bancalari, E., Hamvas, A., Kemp, J. S., Carroll, J. L., Moorman, J. R., Sullivan, B. A., &amp; the Prematurity-Related Ventilatory Control (Pre-Vent) Investigators. (2024). Apnea, intermittent hypoxemia, and bradycardia events predict late-onset sepsis in extremely preterm infants. <i>The Journal of Pediatrics, 271</i>, Article 114042. https://doi.org/10.1016/j.jpeds.2024.114042</p>
+<p>Lin, C., Chau, T., Lin, C.-S., Shang, H.-S., Fang, W.-H., Lee, D.-J., Lee, C.-C., Tsai, S.-H., Wang, C.-H., &amp; Lin, S.-H. (2022). Point-of-care artificial intelligence-enabled ECG for dyskalemia: A retrospective cohort analysis for accuracy and outcome prediction. <i>npj Digital Medicine, 5</i>, Article 8. https://doi.org/10.1038/s41746-021-00550-0</p>
+<p>Lubitz, S. A., Faranesh, A. Z., Selvaggi, C., Atlas, S. J., McManus, D. D., Singer, D. E., Pagoto, S., McConnell, M. V., Pantelopoulos, A., &amp; Foulkes, A. S. (2022). Detection of atrial fibrillation in a large population using wearable devices: The Fitbit Heart Study. <i>Circulation, 146</i>, 1415–1424. https://doi.org/10.1161/CIRCULATIONAHA.122.060291</p>
+<p>Omar, M., Sorin, V., Collins, J. D., Reich, D., Freeman, R., Gavin, N., Charney, A., Stump, L., Bragazzi, N. L., Nadkarni, G. N., &amp; Klang, E. (2025). Multi-model assurance analysis showing large language models are highly vulnerable to adversarial hallucination attacks during clinical decision support. <i>Communications Medicine, 5</i>, Article 330. https://doi.org/10.1038/s43856-025-01021-3</p>
+</section>
+</main>
+<script>document.addEventListener('keydown',e=>{if(e.key==='p'||e.key==='P')window.print()});</script>
+</body></html>
