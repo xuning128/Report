@@ -74,3 +74,6 @@
 ## [2026-11-16] schema | 多篇整合簡報 graph 工作流程
 新增 CLAUDE.md 7.9：三階段（大綱 → 逐頁內容 → 投影片），每階段「產生 → 自動檢查 → 使用者確認」，每關一個檔案；可反覆查 Notion，數字以本機 wiki 核對。資料夾結構新增 output/slides/decks/。
 建立第一份簡報 decks/health-data-x-ai/00-brief.md。
+
+## [2026-11-16] schema | 7.9 補充紀錄位置
+階段 1 也記查詢紀錄（寫在 01-outline.md）；checks.md 固定格式；階段 3 截圖存 shots/slide-NN.png。
